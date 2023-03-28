@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Code Training Module Info</title>
+  <link rel="website icon" type="png"
+  href="images/icons8-bonsai-24.png">
+  </head>
+</head>
+
+<body style="background-color: rgb(25, 97, 131);">
+<a style="font-size: 200px; color: rgb(255, 136, 0); text-decoration: none; font-family: 'Economica', sans-serif;" 
+href="https://docs.google.com/forms/d/e/1FAIpQLSe6tDQsRtg6mCsaQ1GNAHfvVZGhwjsfuP6lyc_ZzGRt78GhoQ/viewform?usp=sf_link">Suggestion Box</a>
+<script>
+  var links = [{label: 'Home', bg: '#c0392b'}];
+  link = document.createElement('a'),
+  hover = document.createElement('span');
+  link.href = "codeTrainingModInfo.html";
+  link.dataset.color = links[0].bg;
+  link.style.display = 'inline-block';
+  link.style.textDecoration = 'none';
+  link.style.color = "grey";
+  link.style.fontFamily = "'Economica', sans-serif";
+  link.style.position = 'absolute';
+  link.style.fontSize = "150px";
+  link.style.zIndex = 100;
+  link.style.top = "300px";
+  link.style.left = "5px";
+  link.innerHTML = links[0].label;
+  hover.style.position = 'absolute';
+  hover.style.display = 'inline-block';
+  hover.style.zIndex = 50;
+  hover.style.opacity = 0;
+  document.body.appendChild(link);
+  document.body.appendChild(hover)
+  link.addEventListener('mouseover', linkOver);
+  link.addEventListener('mouseout', linkOut);
+  links[0].elem = link;
+  links[0].hover = hover;
+</script>
+</body>
+
+</html>

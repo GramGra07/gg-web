@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Code Training Module Info</title>
+  <link rel="website icon" type="png"
+  href="images/icons8-bonsai-24.png">
+  </head>
+</head>
+
+<body style="background-color: rgb(69, 85, 73)">
+<h1 style="color: antiquewhite;font-size: 75px; top: 150px; font-family: 'Economica', sans-serif;">
+Info
+</h1>
+<p style="color: antiquewhite;font-size: 25px; top: 0px; font-family: 'Economica', sans-serif;">
+This is a Code Training Module meant for anyone that wants to learn how to program FTC robots <br>
+Anyone is allowed to use it and I would just request that you fill out the form for feedback, found if you go home, and then go to feedback form.
+<br>
+<br>
+It would be very helpful to me if you make an issue request if you find a mistake or some other kind of error.
+<br>
+<br>
+This is completely student made, so every piece of advice is helpful.
+</p>
+</body>
+<script>
+  var links = [{label: 'Home', bg: '#c0392b'}];
+  link = document.createElement('a'),
+  hover = document.createElement('span');
+  link.href = "codeTrainingModInfo.html";
+  link.dataset.color = links[0].bg;
+  link.style.display = 'inline-block';
+  link.style.textDecoration = 'none';
+  link.style.color = "rgb(150,150,150)";
+  link.style.fontFamily = "'Economica', sans-serif";
+  link.style.position = 'absolute';
+  link.style.fontSize = "50px";
+  link.style.zIndex = 100;
+  link.style.top = "5px";
+  link.style.left = "5px";
+  link.innerHTML = links[0].label;
+  hover.style.position = 'absolute';
+  hover.style.display = 'inline-block';
+  hover.style.zIndex = 50;
+  hover.style.opacity = 0;
+  document.body.appendChild(link);
+  document.body.appendChild(hover)
+  link.addEventListener('mouseover', linkOver);
+  link.addEventListener('mouseout', linkOut);
+  links[0].elem = link;
+  links[0].hover = hover;
+</script>
+</html>

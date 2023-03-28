@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Code Training Module Info</title>
+  <link rel="website icon" type="png"
+  href="images/icons8-bonsai-24.png">
+  </head>
+</head>
+<style .circular--square { border-radius: 50% }></style>
+<body style="background-color: grey;">
+<h1 style="color:blanchedalmond; font-size: 75px; top: 200px; font-family: 'Economica', sans-serif;">
+About the Author
+</h1>
+<p style="color:blanchedalmond; font-size: 25px; top: 0px; font-family: 'Economica', sans-serif;">
+Hi, i'm Graden from FTC team 10448
+<br><br>
+I have been in FTC for a total of two years now, both years as lead programmer and team coach.
+<br><br>
+I hope to share my knowledge and learning throughout the FTC community.
+<br><br>
+I am a sophmore in High School and play soccer as a sport.
+<br><br>
+I have made the Code Training Module as a side project throughout the last year.
+</p>
+<img class = "circular--square" src="images/icons8-bonsai-24.png"/>
+</body>
+<script>
+  var links = [{label: 'Home', bg: "#01031f"}];
+  link = document.createElement('a'),
+  hover = document.createElement('span');
+  link.href = "codeTrainingModInfo.html";
+  link.dataset.color = links[0].bg;
+  link.style.display = 'inline-block';
+  link.style.textDecoration = 'none';
+  link.style.color = "#01031f";
+  link.style.fontFamily = "'Economica', sans-serif";
+  link.style.position = 'absolute';
+  link.style.fontSize = "50px";
+  link.style.zIndex = 100;
+  link.style.top = "5px";
+  link.style.left = "5px";
+  link.innerHTML = links[0].label;
+  hover.style.position = 'absolute';
+  hover.style.display = 'inline-block';
+  hover.style.zIndex = 50;
+  hover.style.opacity = 0;
+  document.body.appendChild(link);
+  document.body.appendChild(hover)
+  link.addEventListener('mouseover', linkOver);
+  link.addEventListener('mouseout', linkOut);
+  links[0].elem = link;
+  links[0].hover = hover;
+</script>
+</html>
