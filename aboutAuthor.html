@@ -2,19 +2,20 @@
 <html>
 <head>
   <title>Code Training Module Info</title>
+  <link href="styleSheet.css" rel="stylesheet">
   <link rel="website icon" type="png"
   href="images/icons8-bonsai-24.png">
   </head>
 </head>
-<style>
-  img {
-      width: 175px;
-      height: 175px;
-      object-fit: cover;
-      border-radius: 50%;
-  }
 </style>
-<body style="background-color: grey;">
+<body>
+  <ul>
+  <li><a href="index.html">Home</a></li>
+  <li><a href="info.html">Info</a></li>
+  <li><a href="aboutAuthor.html">About Author</a></li>
+  </ul>
+</body>
+<body>
 <h1 style="color:blanchedalmond; font-size: 75px; top: 200px; font-family: 'Economica', sans-serif;">
 About the Author <img align = top; src="images/me.jpeg"/>
 </h1>
@@ -31,31 +32,4 @@ I have made the Code Training Module as a side project throughout the last year.
 </p>
 <a href="https://github.com/GramGra07" style="font-size: 25px; color:blanchedalmond; text-decoration: underline; font-family: 'Economica', sans-serif;" >My GitHub Profile is found here<br><br></a>
 </body>
-<script>
-  var links = [{label: 'Home', bg: "#01031f"}];
-  link = document.createElement('a'),
-  hover = document.createElement('span');
-  link.href = "index.html";
-  link.dataset.color = links[0].bg;
-  link.style.display = 'inline-block';
-  link.style.textDecoration = 'none';
-  link.style.color = "#01031f";
-  link.style.fontFamily = "'Economica', sans-serif";
-  link.style.position = 'absolute';
-  link.style.fontSize = "50px";
-  link.style.zIndex = 100;
-  link.style.top = "5px";
-  link.style.left = "5px";
-  link.innerHTML = links[0].label;
-  hover.style.position = 'absolute';
-  hover.style.display = 'inline-block';
-  hover.style.zIndex = 50;
-  hover.style.opacity = 0;
-  document.body.appendChild(link);
-  document.body.appendChild(hover)
-  link.addEventListener('mouseover', linkOver);
-  link.addEventListener('mouseout', linkOut);
-  links[0].elem = link;
-  links[0].hover = hover;
-</script>
 </html>
