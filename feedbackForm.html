@@ -2,40 +2,16 @@
 <html>
 <head>
   <title>Code Training Module Info</title>
+  <link href="styleSheet.css" rel="stylesheet">
   <link rel="website icon" type="png"
   href="images/icons8-bonsai-24.png">
   </head>
 </head>
-
-<body style="background-color: rgb(131, 25, 117);">
-<a style="font-size: 200px; color: rgb(20, 138, 178); text-decoration: none; font-family: 'Economica', sans-serif;"
-href="https://docs.google.com/forms/d/e/1FAIpQLSeTupC20f9uS8r43WUdjHjEq_sG5h49l46qUkRBHCjs4mn7bg/viewform?usp=sf_link">Feedback Form</a>
+<body>
+  <ul>
+  <li><a href="index.html">Home</a></li>
+  <li><a href="feedbackForm.html">Feedback Form</a></li>
+  <li><a href="aboutAuthor.html">About the Author</a></li>
+  </ul>
 </body>
-<script>
-  var links = [{label: 'Home', bg: '#c0392b'}];
-  link = document.createElement('a'),
-  hover = document.createElement('span');
-  link.href = "index.html";
-  link.dataset.color = links[0].bg;
-  link.style.display = 'inline-block';
-  link.style.textDecoration = 'none';
-  link.style.color = "rgb(150,150,150)";
-  link.style.fontFamily = "'Economica', sans-serif";
-  link.style.position = 'absolute';
-  link.style.fontSize = "150px";
-  link.style.zIndex = 100;
-  link.style.top = "300px";
-  link.style.left = "5px";
-  link.innerHTML = links[0].label;
-  hover.style.position = 'absolute';
-  hover.style.display = 'inline-block';
-  hover.style.zIndex = 50;
-  hover.style.opacity = 0;
-  document.body.appendChild(link);
-  document.body.appendChild(hover)
-  link.addEventListener('mouseover', linkOver);
-  link.addEventListener('mouseout', linkOut);
-  links[0].elem = link;
-  links[0].hover = hover;
-</script>
 </html>
