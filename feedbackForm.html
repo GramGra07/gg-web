@@ -3,15 +3,27 @@
 <head>
   <title>Code Training Module Info</title>
   <link href="styleSheet.css" rel="stylesheet">
+  <script src="script.js"></script>
   <link rel="website icon" type="png"
   href="images/icons8-bonsai-24.png">
   </head>
 </head>
-<body>
+
+<body onload="newSrc()">
   <ul>
   <li><a href="index.html">Home</a></li>
   <li><a href="feedbackForm.html">Feedback Form</a></li>
   <li><a href="aboutAuthor.html">About the Author</a></li>
   </ul>
 </body>
+<hr>
+<div>
+  <label for="projOptions2">Choose a project:</label>
+  <select onchange="newSrc()" class="projSelector2" name="projOptions2" id="projOptions2" >
+    <option value="0">Code Training Module</option>
+    <option value="1">OSLC Mobile App</option>
+    <option value="2">FTC Match Scouting App</option>
+  </select>
+</div>
+<iframe src=''  id = 'iframe1' width='640' height='553' frameborder='0' marginheight='0' marginwidth='0'>Loading…</iframe>
 </html>
