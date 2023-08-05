@@ -3,17 +3,31 @@ function optionBuilder() {
   const element = document.getElementById("div1");
   element.replaceChildren();
   title = '';
+  text = '';
+  link = '';
+  linkText = '';
   if (d == 0){
-      title = 'Code Training Module';
-  } else if (d == 1){
+    title = 'Code Training Module';
+    text = 'The Code Training Module is a completely student made project based out of Windsor High School. It is meant to help people learn FTC Robotics programming through Android Studio. Please leave feedback in the feedback form. Please create an issue in the github repository if you find something. Since this is completely student made, every piece of advice is helpful.'
+    link = 'https://github.com/GramGra07/WHS-FTC-GramGra07-Code_Training_Module'
+    linkText = 'Link to Repository'
+    } else if (d == 1){
     title = 'OSLC Mobile App';
+    text = "The OSLC Mobile App is created by me, Graden Gentry, using Flutter to run on both iOS and Android. It is made for Our Savior's Lutheran Church in Greeley CO. I appreciate all feedback, located in the Feedback Form."
   } else if (d == 2){
     title = 'FTC Match Scouting App';
+    text = "The FTC Match Scouting App is created by me, Graden Gentry, using Flutter to run on both iOS and Android. It is made for FTC Robotics Teams to track in-game results to increase scouting capabilities and decision-making. I appreciate all feedback, located in the Feedback Form."
   }
   const titleType = document.createElement("h1");
-  const titleText = document.createTextNode(title);
-  titleType.appendChild(titleText);
+  titleType.appendChild(document.createTextNode(title));
   element.appendChild(titleType);
+  const textType = document.createElement("p");
+  textType.appendChild(document.createTextNode(text));
+  element.appendChild(textType);
+  const linkType = document.createElement("a");
+  linkType.setAttribute('href', href = link);
+  linkType.appendChild(document.createTextNode(linkText));
+  element.appendChild(linkType);
 }
 
 function newSrc(){
