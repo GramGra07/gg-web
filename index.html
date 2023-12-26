@@ -1,29 +1,406 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>GramGra07 Web</title>
-  <link href="styleSheet.css" rel="stylesheet" >
-  <script src="script.js"></script>
-  <link rel="website icon" type="png"
-  href="images/icons8-bonsai-24.png">
-  </head>
-</head>
-<body onload="optionBuilder()">
-  <ul>
-    <li><a class = 'navLink' href="index.html">Home</a></li>
-    <li><a class = 'navLink' href="feedbackForm.html">Feedback Form</a></li>
-    <li><a class = 'navLink' href="aboutAuthor.html">About the Author</a></li>
-    </ul>
-  </body>
-<hr>
-<div>
-  <label for="projOptions">Choose a project:</label>
-  <select onchange="optionBuilder()" class="projSelector" name="projOptions" id="projOptions" >
-    <option value="0">Code Training Module</option>
-    <option value="1">OSLC Mobile App</option>
-    <option value="2">FTC Match Scouting App</option>
-  </select>
-</div>
-<div id ='div1'>
-</div>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Graden Gentry - Portfolio</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+            crossorigin="anonymous"
+        />
+
+        <style>
+            body,
+            canvas {
+                margin: 0;
+                font: normal 80% Arial, Helvetica, sans-serif;
+                display: block;
+            }
+            body {
+                overflow-x: hidden; /* Disable horizontal scrollbar */
+            }
+
+            #particles-js {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background: #333 url("") no-repeat 50% 50%;
+                background-size: cover;
+                z-index: -1;
+            }
+
+            header {
+                background: #333;
+                color: #fff;
+                padding: 2em;
+                display: flex;
+                justify-content: space-between; /* Align items horizontally */
+                align-items: center; /* Align items vertically */
+                font: bold 1.5em/0.6 sans-serif;
+                text-transform: uppercase;
+            }
+            header a.feedback-link {
+                color: #fff;
+                margin: 0 1em;
+                text-decoration: none;
+            }
+
+            header h1,
+            header p {
+                margin: 0; /* Remove default margin */
+            }
+
+            .social-icons {
+                display: flex; /* Align icons horizontally */
+                height: 100%; /* Set the height to 100% */
+            }
+
+            .social-icons a {
+                color: #fff;
+                margin-left: 1em;
+                text-decoration: none;
+                font-size: 1.5em; /* Adjust the size of social icons */
+            }
+
+            section {
+                max-width: 1000px;
+                margin: 2em auto;
+                padding: 1em;
+                background: #fff;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                border-radius: 8px;
+                opacity: 0;
+                transform: translateY(20px);
+                transition: opacity 0.5s, transform 0.5s;
+            }
+
+            section.active {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            h2 {
+                font-size: 1.8em;
+                color: #333;
+            }
+
+            p {
+                font-size: 1.2em;
+                color: #555;
+            }
+
+            ul {
+                list-style-type: none;
+                padding: 0;
+            }
+
+            li {
+                margin-bottom: 0.5em;
+                transition: transform 0.3s ease-in-out;
+            }
+            a:hover {
+                transform: scale(1.2);
+            }
+
+            .portfolio-images {
+                display: flex;
+                justify-content: space-around;
+                margin-top: 1em;
+            }
+
+            .portfolio-image {
+                width: 150px;
+                height: 150px;
+                border-radius: 50%;
+                overflow: hidden;
+                margin: 0 1em;
+                transition: transform 0.3s ease-in-out;
+            }
+
+            .portfolio-image img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .portfolio-image:hover {
+                transform: scale(1.2);
+            }
+
+            .about-me {
+                margin-top: 2em;
+                text-align: justify;
+                font-size: 1.2em;
+            }
+
+            .contact-info {
+                margin-top: 2em;
+            }
+
+            .footer {
+                background: #333;
+                color: #fff;
+                text-align: center;
+                padding: 1em;
+                position: fixed;
+                bottom: 0;
+                width: 100%;
+                font-size: 1.2em;
+            }
+        </style>
+
+        <!-- Include particles.js library from CDN -->
+        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    </head>
+
+    <body>
+        <!-- Header Section -->
+        <header class="active">
+            <div>
+                <h1>Graden Gentry</h1>
+                <br />
+                <p>Portfolio</p>
+            </div>
+            <a href="feedback.html" target="_blank" class="feedback-link"
+                >Give Feedback</a
+            >
+            <!-- Social Icons -->
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/" target="_blank"
+                    ><i class="fab fa-linkedin"></i
+                ></a>
+                <a href="https://twitter.com/" target="_blank"
+                    ><i class="fab fa-twitter"></i
+                ></a>
+                <a href="https://github.com/GramGra07" target="_blank"
+                    ><i class="fab fa-github"></i
+                ></a>
+            </div>
+        </header>
+
+        <!-- Particle Background Container -->
+        <div id="particles-js"></div>
+
+        <section class="active">
+            <h2>My Portfolio</h2>
+            <p>
+                Welcome to my portfolio! Check out some of my recent projects
+                below.
+            </p>
+            <div class="portfolio-images">
+                <div class="portfolio-image">
+                    <a
+                        href="https://apps.apple.com/app/id6474563665"
+                        target="_blank"
+                    >
+                        <img src="images/ftc.png" alt="FTC-Scouting" />
+                    </a>
+                </div>
+                <div class="portfolio-image">
+                    <a
+                        href="https://apps.apple.com/us/app/oslc/id6474106899"
+                        target="_blank"
+                    >
+                        <img src="images/oslc.png" alt="OSLC Application" />
+                    </a>
+                </div>
+                <div class="portfolio-image">
+                    <a
+                        href="https://github.com/GramGra07/WHS-FTC-GramGra07-Code_Training_Module"
+                        target="_blank"
+                    >
+                        <img
+                            src="images/placeholder.png"
+                            alt="Code Training Module"
+                        />
+                    </a>
+                </div>
+                <div class="portfolio-image">
+                    <a
+                        href="https://github.com/GramGra07/RE-Capstone-Project"
+                        target="_blank"
+                    >
+                        <img
+                            src="images/capstone.png"
+                            alt="RE Capstone Project"
+                        />
+                    </a>
+                </div>
+                <div class="portfolio-image">
+                    <a
+                        href="https://github.com/GramGra07/FTCScoutingLogger"
+                        target="_blank"
+                    >
+                        <img
+                            src="images/binocs.svg"
+                            alt="FTC Scouting Logger"
+                        />
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="active">
+            <h2>Project Details</h2>
+            <p>
+                <strong>FTC-Scouting Application:</strong> This is an
+                application I built with Flutter that allows FTC teams to track
+                matches locally on their phones and analyze data from the app.
+            </p>
+            <p>
+                <strong>OSLC Application:</strong> This is an application I
+                built with Flutter that allows members of the church to connect
+                more with the church.
+            </p>
+            <p>
+                <strong>Code Training Module:</strong> This is a repository I
+                built in order to help the entire FTC community with the coding
+                side of robotics. It provides useful code examples, as well as
+                walkthroughs to get teams started and help them continue further
+                in FTC Java coding.
+            </p>
+            <p>
+                <strong>RE Capstone Project:</strong> Final project for Robotics
+                Engineering class completely coded in C++.
+            </p>
+            <p>
+                <strong>FTC Scouting Logger:</strong> This was created in order
+                to help teams scout at their competitions and collect data on
+                teams they would potentially be partnered with. It is completely
+                customizable and created in Python.
+            </p>
+        </section>
+
+        <section class="active">
+            <h2>About Me</h2>
+            <p class="about-me">
+                I am a passionate software developer with a strong background in
+                JavaScript, React, and other web technologies. My goal is to
+                create meaningful and innovative solutions that positively
+                impact users.
+            </p>
+        </section>
+
+        <section class="active">
+            <h2>Contact Information</h2>
+            <ul class="contact-info">
+                <li>
+                    Email:
+                    <a href="mailto:gentrified.apps@gmail.com"
+                        >gentrified.apps@gmail.com</a
+                    >,
+                    <a href="mailto:graymgray07@gmail.com"
+                        >graymgray07@gmail.com</a
+                    >
+                </li>
+                <li>
+                    GitHub:
+                    <a href="https://github.com/GramGra07" target="_blank"
+                        >GramGra07</a
+                    >
+                </li>
+            </ul>
+        </section>
+        <!-- Particle Background Initialization Script -->
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                // Select all sections with the class 'active'
+                const sections = document.querySelectorAll(".active");
+
+                // Function to toggle the 'active' class
+                function toggleActiveSections() {
+                    sections.forEach((section) => {
+                        section.classList.toggle("active");
+                    });
+                }
+            });
+
+            particlesJS("particles-js", {
+                particles: {
+                    number: {
+                        value: 80,
+                        density: { enable: true, value_area: 800 },
+                    },
+                    color: { value: "#ffffff" },
+                    shape: {
+                        type: "circle",
+                        stroke: { width: 0, color: "#000000" },
+                        polygon: { nb_sides: 5 },
+                        image: {
+                            src: "img/github.svg",
+                            width: 100,
+                            height: 100,
+                        },
+                    },
+                    opacity: {
+                        value: 0.5,
+                        random: false,
+                        anim: {
+                            enable: false,
+                            speed: 1,
+                            opacity_min: 0.1,
+                            sync: false,
+                        },
+                    },
+                    size: {
+                        value: 3,
+                        random: true,
+                        anim: {
+                            enable: false,
+                            speed: 40,
+                            size_min: 0.1,
+                            sync: false,
+                        },
+                    },
+                    line_linked: {
+                        enable: true,
+                        distance: 150,
+                        color: "#ffffff",
+                        opacity: 0.4,
+                        width: 1,
+                    },
+                    move: {
+                        enable: true,
+                        speed: 6,
+                        direction: "none",
+                        random: false,
+                        straight: false,
+                        out_mode: "out",
+                        bounce: false,
+                        attract: { enable: false, rotateX: 600, rotateY: 1200 },
+                    },
+                },
+                interactivity: {
+                    detect_on: "canvas",
+                    events: {
+                        onhover: { enable: true, mode: "repulse" },
+                        onclick: { enable: true, mode: "push" },
+                        resize: true,
+                    },
+                    modes: {
+                        grab: { distance: 400, line_linked: { opacity: 1 } },
+                        bubble: {
+                            distance: 200,
+                            size: 20,
+                            duration: 2,
+                            opacity: 8,
+                            speed: 3,
+                        },
+                        repulse: { distance: 100, duration: 0.4 },
+                        push: { particles_nb: 4 },
+                        remove: { particles_nb: 2 },
+                    },
+                },
+                retina_detect: true,
+            });
+
+            update = function () {
+                requestAnimationFrame(update);
+            };
+            requestAnimationFrame(update);
+        </script>
+    </body>
 </html>
