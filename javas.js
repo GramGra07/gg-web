@@ -19,6 +19,7 @@ function toRun() {
     const markdownStartDate = "2022-08-02";
     const cplusStartDate = "2022-08-14"
     const swiftStartDate = "2023-10-16"
+    const kotlinStartDate = "2024-02-19"
 
     const startDateMap = {
         dart: dartStartDate,
@@ -28,6 +29,7 @@ function toRun() {
         markdown: markdownStartDate,
         cplus: cplusStartDate,
         swift: swiftStartDate,
+        kotlin: kotlinStartDate
     };
     const languages = Object.keys(startDateMap);
 
