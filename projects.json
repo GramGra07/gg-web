@@ -1,0 +1,178 @@
+[
+  {
+    "id": "ziplist",
+    "title": "ZipList",
+    "description": "Cross‑platform (iOS/Web) minimal todo list focused on speed, offline cache, and zero learning curve.",
+    "image": "images/ziplist.png",
+    "category": ["app", "web"],
+    "tags": ["flutter", "productivity", "sync"],
+    "status": "active",
+    "date": "2025-06-01",
+    "links": {
+      "web": "https://ziplist.web.app/",
+      "appstore": "https://apps.apple.com/us/app/ziplist/id6639599555"
+    }
+  },
+  {
+    "id": "ap-chem-kinetics",
+    "title": "AP Chem Kinetics Simulator",
+    "description": "Educational kinetics visualization app letting students experiment with rate laws & concentration curves.",
+    "image": "images/kinetics.png",
+    "category": ["app"],
+    "tags": ["flutter", "education", "chemistry"],
+    "status": "active",
+    "date": "2023-01-15",
+    "links": {
+      "appstore": "https://apps.apple.com/us/app/ap-chem-kinetics/id6480323465"
+    }
+  },
+  {
+    "id": "ftc-scouting-app",
+    "title": "FTC Scouting App",
+    "description": "Mobile app enabling match data capture, team metrics, and offline-first analysis for FTC teams.",
+    "image": "images/ftc.png",
+    "category": ["app"],
+    "tags": ["flutter", "mobile", "scouting"],
+    "status": "active",
+    "date": "2024-02-10",
+    "links": {
+      "appstore": "https://apps.apple.com/app/id6474563665",
+      "playstore": "https://play.google.com/store/apps/details?id=com.gentrifiedApps.ftcFlutter"
+    }
+  },
+  {
+    "id": "oslc",
+    "title": "OSLC Church App",
+    "description": "Community engagement & announcements hub for church members with push content.",
+    "image": "images/oslc.png",
+    "category": ["app"],
+    "tags": ["flutter", "community", "engagement"],
+    "status": "active",
+    "date": "2023-12-05",
+    "links": {
+      "appstore": "https://apps.apple.com/us/app/oslc/id6474106899",
+      "playstore": "https://play.google.com/store/apps/details?id=com.greeleylutheran.oslcinfo"
+    }
+  },
+  {
+    "id": "ftc-code-training-module",
+    "title": "FTC Code Training Module",
+    "description": "Open educational resource with structured Java examples, setup guides, and progressive robotics exercises.",
+    "image": "images/ftc2.png",
+    "category": ["tool", "other"],
+    "tags": ["java", "education", "robotics"],
+    "status": "ongoing",
+    "date": "2024-08-01",
+    "links": {
+      "documentation": "https://gramgra07.github.io/WHS-FTC-Code_Training_Module/",
+      "repo": "https://github.com/GramGra07/WHS-FTC-Code_Training_Module"
+    }
+  },
+  {
+    "id": "ftc-scouting-logger",
+    "title": "FTC Scouting Logger",
+    "description": "Configurable Python logging utility to collect and export scouting metrics in CSV/JSON.",
+    "image": "images/binocs.svg",
+    "category": ["tool"],
+    "tags": ["python", "data", "cli"],
+    "status": "completed",
+    "date": "2023-11-20",
+    "links": {
+      "repo": "https://github.com/GramGra07/FTCScoutingLogger"
+    }
+  },
+  {
+    "id": "re-capstone",
+    "title": "Robotics Engineering Capstone",
+    "description": "C++ autonomous control project demonstrating motion planning & hardware abstraction patterns.",
+    "image": "images/capstone.png",
+    "category": ["other"],
+    "tags": ["c++", "robotics", "autonomy"],
+    "status": "completed",
+    "date": "2023-05-30",
+    "links": {
+      "repo": "https://github.com/GramGra07/RE-Capstone-Project"
+    }
+  },
+  {
+    "id": "csmfaa-web",
+    "title": "CSMFAA Web",
+    "description": "Colorado School of Mines FIRST Alumni Association Website",
+    "image": "images/minesLogo.jpg",
+    "category": ["web","vibe_coded"],
+    "tags": ["html", "css", "javascript"],
+    "status": "ongoing",
+    "date": "2025-02-01",
+    "links": {
+      "web": "https://gramgra07.github.io/CSMFAAWeb/",
+	  "repo":"https://github.com/GramGra07/CSMFAAWeb"
+    }
+  },
+  {
+    "id": "ftc-linter",
+    "title": "FTC Linter",
+    "description": "Static analysis tool to catch common robotics code issues in FTC Java projects.",
+    "image": "images/ftc.png",
+    "category": ["tool", "library"],
+    "tags": ["java", "analysis", "linter"],
+    "status": "completed",
+    "date": "2025-03-01",
+    "links": {
+      "repo": "https://github.com/GramGra07/FTC-Linter",
+	  "Documentation":"https://gramgra07.github.io/FTC-Linter/starter-topic.html"
+    }
+  },
+  {
+    "id": "gentrified-utils",
+    "title": "Gentrified Apps Util Library",
+    "description": "FTC Library with a lot of utilities and classes to advance FTC teams.",
+    "image": "images/ftc.png",
+    "category": ["library"],
+    "tags": ["utilities", "java", "utilities"],
+    "status": "active",
+    "date": "2025-01-20",
+    "links": {
+      "Documentation": "https://gramgra07.github.io/GentrifiedAppsUtil/" 
+    }
+  },
+  {
+    "id": "gymzy-app",
+    "title": "Gymzy",
+    "description": "Workout session logging & workout planning app",
+    "image": "images/gymzy.png",
+    "category": ["app","web"],
+    "tags": ["flutter", "health", "fitness"],
+    "status": "ongoing",
+    "date": "2025-04-10",
+    "links": {
+      "appstore": "https://apps.apple.com/us/app/gymzy/id6748660981",
+	  "web":"https://gramgra07.github.io/Gymzy/"
+    }
+  },
+  {
+    "id": "ece-toolkit",
+    "title": "ECE Toolkit",
+    "description": "Reference & calculation toolkit for common Electrical & Computer Engineering formulas and utils.",
+    "image": "images/ecetk.png",
+    "category": ["app", "tool"],
+    "tags": ["flutter", "engineering", "calculator"],
+    "status": "completed",
+    "date": "2025-05-05",
+    "links": {
+		"appstore": "https://apps.apple.com/us/app/ecetoolkit/id6746349427"
+    }
+  },
+  {
+    "id": "code-with-me-ftc",
+    "title": "Code With Me FTC (YouTube Series)",
+    "description": "Educational video series walking through real FTC codebase setup and systems",
+    "image": "images/cwmftc.jpg",
+    "category": ["other", "tool"],
+    "tags": ["education", "video", "ftc"],
+    "status": "active",
+    "date": "2025-02-15",
+    "links": {
+      "youtube": "https://www.youtube.com/playlist?list=PL1fIjF60Zomk1agzg7Mp8WgeA0oDZPckW" 
+    }
+  }
+]
