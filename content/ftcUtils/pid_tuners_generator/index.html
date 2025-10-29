@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+    </head>
+
+        <body onload="toRun()">
+            <a class="back-button" href="/public/" aria-label="Back to Terminal">← Back</a>
+        <title>PidTuners Generator</title>
+        <link rel="icon" href="images/placeholder.png"  type="image/png"/>
+        <link rel="stylesheet" href="styles.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+            crossorigin="anonymous"
+        />
+        <script src="javas.js"></script>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #f0f0f0; /* Change the background color of the entire page */
+                color: #333;
+                height: 100vh;
+                width: 100vw;
+                display: flex;
+                flex-direction: column;
+            }
+            header {
+                background-color: #333;
+                color: #fff;
+                padding: 20px;
+                text-align: center;
+                flex-shrink: 0;
+                white-space: nowrap;
+            }
+            main {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 20px;
+            }
+            section {
+                padding: 20px;
+                margin: 20px;
+                background-color: #e0e0e0; /* Change the background color of the sections */
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                width: 100vw;
+            }
+            form {
+                display: flex;
+                flex-direction: column;
+            }
+            label {
+                margin-top: 10px;
+            }
+            input, select, button {
+                padding: 10px;
+                margin-top: 5px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+            }
+            button {
+                background-color: #333;
+                color: #fff;
+                cursor: pointer;
+                margin-top: 20px;
+            }
+            button:hover {
+                background-color: #555;
+            }
+            #output {
+                margin-top: 20px;
+            }
+            pre {
+                background-color: #f4f4f4;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                white-space: pre-wrap;
+                word-wrap: break-word;
+            }
+        </style>
+    </head>
+
+    <body onload="toRun()" style="background-color: #333;">
+        <!-- Header Section -->
+        <header class="active">
+            <div>
+                <h1>Pid Tuners Generator</h1>
+            </div>
+        </header>
+        <main>
+            <section class="active">
+                <form id="dataForm">
+                    <input type="text" id="armName" placeholder="Arm Name" />
+                    <input type="number" id="ta1" placeholder="Testing Angle 1 Degrees" value="0" />
+                    <input type="number" id="ta2" placeholder="Testing Angle Stop (degrees)"  />
+                    <select id="armType"placeholder="Arm Type"onchange="showHide(this.value)">
+                        <option value="yj30">YellowJacket 30</option>
+                        <option value="yj43">YellowJacket 43</option>
+                        <option value="yj60">YellowJacket 60</option>
+                        <option value="yj84">YellowJacket 84</option>
+                        <option value="yj117">YellowJacket 117</option>
+                        <option value="yj223">YellowJacket 223</option>
+                        <option value="yj312">YellowJacket 312</option>
+                        <option value="yj435">YellowJacket 435</option>
+                        <option value="yj1150">YellowJacket 1150</option>
+                        <option value="yj1620">YellowJacket 1620</option>
+                        <option value="yj6000">YellowJacket 6000</option>
+                        <option value="tnMax">TorqueNado MAX</option>
+                        <option value="nvc60">NeveRest Classic 60</option>
+                        <option value="nvc40">NeveRest Classic 40</option>
+                        <option value="nvo20">NeveRest Orbital 20</option>
+                        <option value="nvo3_7">NeveRest Orbital 3_7</option>
+                        <option value = "rch">Rev Core Hex</option>
+                        <option value = "rs40">Rev Spur 40</option>
+                        <option value = "rs20">Rev Spur 20</option>
+                        <option value = "hdhex">Rev HD Hex</option>
+                    </select>
+                    <input type="text" id = "slideName" placeholder="Slide Name" />
+                    <input type="number" id = "slideRange1" placeholder="Slide Range 1 Ticks" value = 0 />
+                    <input type="number" id = "slideRange2" placeholder="Slide Range Stop (ticks)" />
+                    <input type="text" id="spoolDiameter" placeholder="Spool Diameter (inches 0.0)" />
+                    <select id="slideType"placeholder="Slide Type"onchange="showHide(this.value)">
+                        <option value="yj30">YellowJacket 30</option>
+                        <option value="yj43">YellowJacket 43</option>
+                        <option value="yj60">YellowJacket 60</option>
+                        <option value="yj84">YellowJacket 84</option>
+                        <option value="yj117">YellowJacket 117</option>
+                        <option value="yj223">YellowJacket 223</option>
+                        <option value="yj312">YellowJacket 312</option>
+                        <option value="yj435">YellowJacket 435</option>
+                        <option value="yj1150">YellowJacket 1150</option>
+                        <option value="yj1620">YellowJacket 1620</option>
+                        <option value="yj6000">YellowJacket 6000</option>
+                        <option value="tnMax">TorqueNado MAX</option>
+                        <option value="nvc60">NeveRest Classic 60</option>
+                        <option value="nvc40">NeveRest Classic 40</option>
+                        <option value="nvo20">NeveRest Orbital 20</option>
+                        <option value="nvo3_7">NeveRest Orbital 3_7</option>
+                        <option value = "rch">Rev Core Hex</option>
+                        <option value = "rs40">Rev Spur 40</option>
+                        <option value = "rs20">Rev Spur 20</option>
+                        <option value = "hdhex">Rev HD Hex</option>
+                    </select>
+                    <button type="button" onclick="generateData()">Generate Data</button>
+                </form>
+            </section>
+
+            <section class="active">
+                <div id="output">
+                    <h2>Output</h2>
+                    <pre id="outputText"></pre>
+                </div>
+            </section>
+        </main>
+    </body>
+</html>

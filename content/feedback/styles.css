@@ -16,7 +16,66 @@ body {
 	height: 100vh;
 	background: #333 url("") no-repeat 50% 50%;
 	background-size: cover;
-	z-index: -1;
+	z-index: -1; /* sit behind content */
+}
+
+/* Feedback page layout */
+.content {
+	position: relative;
+	z-index: 1;
+	padding: 24px 16px 32px;
+	display: grid;
+	justify-items: center;
+	gap: 12px;
+}
+
+h1,
+h2 {
+	color: #fff;
+	text-align: center;
+	margin: 0.5rem 0;
+}
+h1 {
+	font-size: clamp(1.6rem, 2.5vw, 2.4rem);
+}
+h2 {
+	font-size: clamp(1.1rem, 2vw, 1.5rem);
+	opacity: 0.95;
+}
+
+iframe {
+	width: min(92vw, 960px);
+	height: min(70vh, 900px);
+	border: none;
+	display: block;
+	margin: 0.5rem auto 1.25rem;
+	border-radius: 8px;
+	background: #fff;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.back-button {
+	position: fixed;
+	top: 16px;
+	left: 16px;
+	z-index: 2;
+	color: #fff;
+	text-decoration: none;
+	font-size: 1.1rem;
+	line-height: 1;
+	padding: 6px 10px;
+	border-radius: 8px;
+	background: rgba(0, 0, 0, 0.25);
+	backdrop-filter: blur(2px);
+}
+.back-button:hover {
+	background: rgba(255, 255, 255, 0.15);
+}
+
+@media (max-width: 600px) {
+	iframe {
+		height: 60vh;
+	}
 }
 .progress-bar {
 	width: 100%;

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Graden Gentry - Portfolio</title>
+		<link rel="icon" href="images/placeholder.png" />
+		<link rel="stylesheet" href="styles.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+			crossorigin="anonymous"
+		/>
+		<script
+			src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"
+			defer
+		></script>
+		<script src="javas.js" defer></script>
+	</head>
+
+	<body onload="toRun()">
+		<!-- Header Section -->
+		<header class="active">
+			<div class="header-left">
+				<a href="/public/" class="back-button"
+					><i class="fas fa-arrow-left"></i> Back</a
+				>
+				<div class="title-block">
+					<h1>Graden Gentry - Gentrified Apps</h1>
+					<br />
+					<p>Portfolio</p>
+				</div>
+			</div>
+			<div class="header-right">
+				<a
+					href="../feedback/feedback.html"
+					target="_blank"
+					class="feedback-link"
+					>Give Feedback</a
+				>
+				<!-- Social Icons -->
+				<div class="social-icons">
+					<a href="https://github.com/GramGra07" target="_blank"
+						><i class="fab fa-github"></i
+					></a>
+					<a href="www.linkedin.com/in/graden-gentry-149513321" target="_blank"
+						><i class="fab fa-linkedin"></i
+					></a>
+				</div>
+			</div>
+		</header>
+
+		<!-- Particle Background Container -->
+		<div id="particles-js"></div>
+
+		<section class="active">
+			<h2>My Portfolio</h2>
+			<p>
+				Welcome to my portfolio! Check out some of my recent projects below.
+			</p>
+			<!-- New controls for scalable project listing -->
+			<div class="project-controls" aria-label="Project Filters and Search">
+				<div class="filter-group" role="group" aria-label="Category Filters">
+					<button
+						class="filter-btn is-active"
+						data-filter="all"
+						aria-pressed="true"
+					>
+						All
+					</button>
+					<button class="filter-btn" data-filter="app">Apps</button>
+					<button class="filter-btn" data-filter="web">Web</button>
+					<button class="filter-btn" data-filter="tool">Tools</button>
+					<button class="filter-btn" data-filter="library">Libraries</button>
+					<button class="filter-btn" data-filter="other">Other</button>
+				</div>
+				<div class="search-group">
+					<label for="projectSearch" class="visually-hidden"
+						>Search Projects</label
+					>
+					<input
+						id="projectSearch"
+						type="search"
+						placeholder="Search projects..."
+						aria-label="Search projects"
+					/>
+				</div>
+				<div class="sort-group">
+					<label for="projectSort" class="visually-hidden">Sort Projects</label>
+					<select id="projectSort" aria-label="Sort projects">
+						<option value="recent">Most Recent</option>
+						<option value="az">A → Z</option>
+						<option value="za">Z → A</option>
+					</select>
+				</div>
+			</div>
+
+			<!-- Dynamic project grid -->
+			<div id="projectGrid" class="project-grid" aria-live="polite"></div>
+			<div class="project-actions">
+				<button
+					id="loadMoreProjects"
+					class="load-more"
+					aria-label="Load more projects"
+				>
+					Load More
+				</button>
+			</div>
+			<noscript>
+				<p>Enable JavaScript to view the full interactive project list.</p>
+			</noscript>
+
+			<!-- Legacy static images (will be superseded by dynamic grid but kept for fallback) -->
+			<div class="portfolio-images legacy-static" hidden>
+				<div class="portfolio-image">
+					<a href="https://apps.apple.com/app/id6474563665" target="_blank">
+						<img src="images/ftc.png" class="image" alt="FTC-Scouting" />
+					</a>
+				</div>
+				<div class="portfolio-image">
+					<a href="https://ziplist.web.app/" target="_blank">
+						<img src="images/ziplist.png" class="image" alt="ZipList" />
+					</a>
+				</div>
+				<div class="portfolio-image">
+					<a
+						href="https://apps.apple.com/us/app/oslc/id6474106899"
+						target="_blank"
+					>
+						<img src="images/oslc.png" class="image" alt="OSLC Application" />
+					</a>
+				</div>
+				<div class="portfolio-image">
+					<a
+						href="https://gramgra07.github.io/WHS-FTC-Code_Training_Module/"
+						target="_blank"
+					>
+						<img
+							src="images/ftc2.png"
+							class="icon"
+							alt="Code Training Module"
+						/>
+					</a>
+				</div>
+				<div class="portfolio-image">
+					<a
+						href="https://github.com/GramGra07/RE-Capstone-Project"
+						target="_blank"
+					>
+						<img
+							src="images/capstone.png"
+							class="image"
+							alt="RE Capstone Project"
+						/>
+					</a>
+				</div>
+				<div class="portfolio-image">
+					<a
+						href="https://github.com/GramGra07/FTCScoutingLogger"
+						target="_blank"
+					>
+						<img
+							src="images/binocs.svg"
+							class="icon"
+							alt="FTC Scouting Logger"
+						/>
+					</a>
+				</div>
+			</div>
+		</section>
+
+		<section class="active">
+			<h2>About Me</h2>
+			<p class="about-me">
+				My objective is to excel in all types of engineering, specifically
+				Computer Science and Electrical Engineering, through work and
+				experience. I have excellent communication, work ethic, leadership, and
+				am driven to succeed. I am proficient in Final Cut Pro, Android Studio,
+				Visual Studio Code, Github, OnShape, Kotlin, Python, Java, Dart, and
+				Markdown.
+			</p>
+			<div class="language-label" id="dart">Dart Experience</div>
+			<div class="progress-bar" id="dartProgress">
+				<div class="progress" id="dartProgressBar"></div>
+			</div>
+			<br />
+			<div class="language-label" id="python">Python Experience</div>
+			<div class="progress-bar" id="pythonProgress">
+				<div class="progress" id="pythonProgressBar"></div>
+			</div>
+			<br />
+			<div class="language-label" id="java">Java Experience</div>
+			<div class="progress-bar" id="javaProgress">
+				<div class="progress" id="javaProgressBar"></div>
+			</div>
+			<br />
+			<div class="language-label" id="html">HTML Experience</div>
+			<div class="progress-bar" id="htmlProgress">
+				<div class="progress" id="htmlProgressBar"></div>
+			</div>
+			<div class="language-label" id="markdown">Markdown Experience</div>
+			<div class="progress-bar" id="markdownProgress">
+				<div class="progress" id="markdownProgressBar"></div>
+			</div>
+			<div class="language-label" id="cplus">Markdown Experience</div>
+			<div class="progress-bar" id="cplusProgress">
+				<div class="progress" id="cplusProgressBar"></div>
+			</div>
+			<div class="language-label" id="swift">Markdown Experience</div>
+			<div class="progress-bar" id="swiftProgress">
+				<div class="progress" id="swiftProgressBar"></div>
+			</div>
+
+			<div class="language-label" id="kotlin">Kotlin Experience</div>
+			<div class="progress-bar" id="kotlinProgress">
+				<div class="progress" id="kotlinProgressBar"></div>
+			</div>
+
+			<br />
+			<br />
+			<!--             <h2>Languages and Tools</h2>
+            <div>
+                <img
+                    src="https://github.com/devicons/devicon/blob/master/icons/java/java-original-wordmark.svg"
+                    title="Java"
+                    alt="Java"
+                    width="40"
+                    height="40"
+                />&nbsp;
+                <img
+                    src="https://github.com/devicons/devicon/blob/master/icons/flutter/flutter-original.svg"
+                    title="Flutter"
+                    alt="Flutter"
+                    width="40"
+                    height="40"
+                />&nbsp;
+                <img
+                    src="https://github.com/devicons/devicon/blob/master/icons/html5/html5-original.svg"
+                    title="HTML5"
+                    alt="HTML"
+                    width="40"
+                    height="40"
+                />&nbsp;
+                <img
+                    src="https://github.com/devicons/devicon/blob/master/icons/git/git-original.svg"
+                    title="Git"
+                    **alt="Git"
+                    width="40"
+                    height="40"
+                />
+                <img
+                    src="https://github.com/devicons/devicon/blob/master/icons/arduino/arduino-original.svg"
+                    title="arduino"
+                    **alt="arduino"
+                    width="40"
+                    height="40"
+                />
+                <img
+                    src="https://github.com/devicons/devicon/blob/master/icons/androidstudio/androidstudio-original.svg"
+                    title="android"
+                    **alt="android"
+                    width="40"
+                    height="40"
+                />
+                <img
+                    src="https://github.com/devicons/devicon/blob/master/icons/python/python-original.svg"
+                    title="python"
+                    **alt="python"
+                    width="40"
+                    height="40"
+                />
+                <img
+                    src="https://github.com/devicons/devicon/blob/master/icons/dart/dart-original.svg"
+                    title="dart"
+                    **alt="dart"
+                    width="40"
+                    height="40"
+                />
+                <img
+                    src="https://github.com/devicons/devicon/blob/master/icons/xcode/xcode-original.svg"
+                    title="xcode"
+                    **alt="xcode"
+                    width="40"
+                    height="40"
+                />
+                <img
+                    src="https://github.com/devicons/devicon/blob/master/icons/vscode/vscode-original.svg"
+                    title="vscode"
+                    **alt="vscode"
+                    width="40"
+                    height="40"
+                />
+                <img
+                    src="https://github.com/devicons/devicon/blob/master/icons/kotlin/kotlin-original.svg"
+                    title="kotlin"
+                    **alt="kotlin"
+                    width="40"
+                    height="40"
+                />
+            </div> -->
+			<p align="left">
+				<a href="https://github.com/ryo-ma/github-profile-trophy"
+					><img
+						src="https://github-profile-trophy.vercel.app/?username=GramGra07&theme=darkhub"
+						alt="GramGra07"
+				/></a>
+			</p>
+			<img
+				align="center"
+				src="http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=GramGra07&theme=dark"
+				height="180em"
+			/>
+			<!-- Removed stray nested body tag -->
+			<img
+				height="180em"
+				align="left"
+				src="https://github-readme-stats.vercel.app/api?username=GramGra07&show_icons=true&hide_border=true&count_private=true&theme=dark"
+			/>
+			<br />
+			<img
+				height="180em"
+				src="https://github-readme-stats.vercel.app/api/top-langs/?username=GramGra07&theme=dark&exclude_repo=road-runner-quickstart,OLD_FtcRobotController-10448-2022-23,FTC-RobotController-2021-10448"
+			/>
+			<img
+				src="https://www.codewars.com/users/GramGra07/badges/large"
+				alt="GramGra07's Codewars Stats"
+			/>
+		</section>
+		<section class="active">
+			<h2>Contact Information</h2>
+			<ul class="contact-info">
+				<li>
+					Email:
+					<a href="mailto:gentrified.apps@gmail.com"
+						>gentrified.apps@gmail.com</a
+					>,
+					<a href="mailto:graymgray07@gmail.com">graymgray07@gmail.com</a>
+				</li>
+				<li>
+					GitHub:
+					<a href="https://github.com/GramGra07" target="_blank">GramGra07</a>
+				</li>
+			</ul>
+		</section>
+	</body>
+</html>
