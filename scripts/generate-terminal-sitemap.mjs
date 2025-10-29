@@ -76,7 +76,7 @@ async function readDirTree(absDir, relDir = "") {
 					path: `/${rel}`,
 					type: "file",
 					hidden,
-					url: `/gg-web/content/${rel}`,
+					url: `/content/${rel}`,
 				};
 			}
 			return null;
