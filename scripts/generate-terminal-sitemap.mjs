@@ -18,7 +18,8 @@ const DEFAULT_IGNORES = new Set([
 	"dist",
 	"build",
 	"Thumbs.db",
-	"README.md"
+	"README.md",
+	"privacy"
 ]);
 
 // File extensions to ignore (lowercase, include the dot)
