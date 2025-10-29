@@ -4,8 +4,15 @@
   "private": true,
   "scripts": {
     "start": "npx live-server --port=5173",
-    "dev": "npm run start",
-    "clean": "node -e \"try{require('fs').rmSync('node_modules',{recursive:true,force:true});console.log('Removed node_modules');}catch(e){console.error(e);process.exit(1)}\""
+    "clean": "node -e \"try{require('fs').rmSync('node_modules',{recursive:true,force:true});console.log('Removed node_modules');}catch(e){console.error(e);process.exit(1)}\"",
+
+    
+    "sitemap": "node scripts/generate-terminal-sitemap.mjs",
+    "predev": "npm run sitemap",
+    "dev": "serve public -l 5173",
+	"prestart": "npm run sitemap",
+    "prebuild": "npm run sitemap",
+    "build": "echo \"static site\""
   },
   "devDependencies": {
     "live-server": "^1.2.0",

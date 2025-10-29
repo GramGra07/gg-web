@@ -1,0 +1,89 @@
+:root {
+	--bg: #0d0f12;
+	--panel: #111418;
+	--text: #d8dee9;
+	--muted: #7f8894;
+	--accent: #5eead4;
+	--green: #a7f3d0;
+	--mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+		"Liberation Mono", "Courier New", monospace;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	height: 100%;
+	margin: 0;
+	overflow: hidden; /* prevent page scroll; terminal scrolls internally */
+	background: radial-gradient(
+		1200px 800px at 20% -10%,
+		#1b2230 0%,
+		#0d0f12 60%
+	);
+	color: var(--text);
+	font-family: var(--mono);
+}
+
+#app {
+	height: 100vh;
+	max-width: 900px;
+	margin: 0 auto;
+	padding: 16px;
+	display: grid;
+	grid-template-rows: 1fr auto; /* terminal grows, prompt stays at bottom */
+	gap: 10px;
+}
+
+.term {
+	background: linear-gradient(#0e1116, #0b0d11);
+	border: 1px solid #1a2230;
+	border-radius: 12px;
+	padding: 16px;
+	min-height: 0; /* allow grid to control height */
+	white-space: pre-wrap;
+	overflow: auto;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35),
+		inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+#prompt {
+	display: flex;
+	gap: 8px;
+	margin-top: 0;
+	background: var(--panel);
+	border: 1px solid #1b2330;
+	border-radius: 12px;
+	padding: 12px;
+	align-items: center;
+}
+
+.ps1 {
+	color: var(--accent);
+}
+
+#cmd {
+	flex: 1;
+	background: transparent;
+	border: none;
+	color: var(--text);
+	outline: none;
+	font-family: var(--mono);
+	font-size: 14px;
+}
+
+.output .err {
+	color: #fca5a5;
+}
+.output .ok {
+	color: var(--green);
+}
+a {
+	color: var(--green);
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}

@@ -17,7 +17,7 @@ function toRun() {
 	const javaStartDate = "2021-09-09";
 	const pythonStartDate = "2019-07-01";
 	const markdownStartDate = "2022-08-02";
-	const cplusStartDate = "2022-08-14";
+	const cplusStartDate = "2025-07-14";
 	const swiftStartDate = "2023-10-16";
 	const kotlinStartDate = "2024-02-19";
 

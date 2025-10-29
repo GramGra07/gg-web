@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Config Generator</title>
+        <link rel="icon" href="images/placeholder.png"  type="image/png"/>
+        <link rel="stylesheet" href="styles.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+            crossorigin="anonymous"
+        />
+        <script src="javas.js"></script>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #f0f0f0; /* Change the background color of the entire page */
+                color: #333;
+                height: 100vh;
+                width: 100vw;
+                display: flex;
+                flex-direction: column;
+            }
+            header {
+                background-color: #333;
+                color: #fff;
+                padding: 20px;
+                text-align: center;
+                flex-shrink: 0;
+                white-space: nowrap;
+            }
+            main {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 20px;
+            }
+            section {
+                padding: 20px;
+                margin: 20px;
+                background-color: #e0e0e0; /* Change the background color of the sections */
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                width: 100vw;
+            }
+            form {
+                display: flex;
+                flex-direction: column;
+            }
+            label {
+                margin-top: 10px;
+            }
+            input, select, button {
+                padding: 10px;
+                margin-top: 5px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+            }
+            button {
+                background-color: #333;
+                color: #fff;
+                cursor: pointer;
+                margin-top: 20px;
+            }
+            button:hover {
+                background-color: #555;
+            }
+            #output {
+                margin-top: 20px;
+            }
+            pre {
+                background-color: #f4f4f4;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                white-space: pre-wrap;
+                word-wrap: break-word;
+            }
+        </style>
+    </head>
+
+    <body onload="toRun()" style="background-color: #333;">
+        <a class="back-button" href="/public/" aria-label="Back to Terminal">← Back</a>
+        <!-- Header Section -->
+        <header class="active">
+            <div>
+                <h1>Config Registrar Generator</h1>
+            </div>
+        </header>
+        <main>
+            <section class="active">
+                <form id="dataForm">
+                    <input id="name" placeholder="Config Name"></input>
+                    <div id = "input" style="flex-direction: row;">
+                    <select id="module" placeholder="Module Type">
+                        <option value="Control Hub">Control Hub</option>
+                        <option value="Expansion Hub">Expansion Hub</option>
+                    </select>
+                    <select id="device" placeholder="Device Type" onchange="checkDeviceType()">
+                        <option value="Servo">Servo</option>
+                        <option value="Motor">Motor</option>
+                        <option value = "Camera">Camera</option>
+                        <option value="AnalogInput">Analog Input</option>
+                        <option value="ContinuousRotationServo">Continuous Rotation Servo</option>
+                        <option value = "
+                                REV_INTERNAL_BNO055_IMU">REV_INTERNAL_BNO055_IMU</option>
+                        <option value="
+        REV_INTERNAL_BHI260_IMU">REV_INTERNAL_BHI260_IMU</option>
+                        <option value="RevSPARKMini">Rev SPARK Mini</option>
+                        <option value="RevBlinkinLedDriver">Rev Blinkin LED Driver</option>
+                        <option value="AdafruitBNO055IMU">Adafruit BNO055 IMU</option>
+                        <option value="HuskyLens">HuskyLens</option>
+                        <option value="OctoQuadFTC">OctoQuad FTC</option>
+                        <option value="REV_VL53L0X_RANGE_SENSOR">REV VL53L0X Range Sensor</option>
+                        <option value="RevExternalImu">Rev External IMU</option>
+                        <option value="RevColorSensorV3">Rev Color Sensor V3</option>
+                        <option value="QWIIC_LED_STICK">QWIIC LED Stick</option>
+                        <option value="SparkFunOTOS">SparkFun OTOS</option>
+                        <option value="RevTouchSensor">Rev Touch Sensor</option>
+                        <option value="Led">LED</option>
+                        <option value="DigitalDevice">Digital Device</option>
+                        <option value="OpticalDistanceSensor">Optical Distance Sensor</option>
+                        <option value="ModernRoboticsAnalogTouchSensor">Modern Robotics Analog Touch Sensor</option>
+                    </select>
+                    <input id = "deviceName" placeholder="Device Name"></input>
+                    <input id = "port" placeholder="Port"></input>
+                    <button type="button" onclick="addDevice()">Add Device</button>
+                    <select id = "motorInput" style=" display: none;">
+                        <option value="goBILDA5201SeriesMotor">goBILDA 5201 Series Motor</option>
+                        <option value="goBILDA5202SeriesMotor">goBILDA 5202 Series Motor</option>
+                        <option value="Matrix12vMotor">Matrix 12v Motor</option>
+                        <option value="NeveRest3_7v1Gearmotor">NeveRest 3.7v1 Gearmotor</option>
+                        <option value="NeveRest20Gearmotor">NeveRest 20 Gearmotor</option>
+                        <option value="NeveRest40Gearmotor">NeveRest 40 Gearmotor</option>
+                        <option value="NeveRest60Gearmotor">NeveRest 60 Gearmotor</option>
+                        <option value="RevRobotics20HDHexMotor">Rev Robotics 20HD Hex Motor</option>
+                        <option value="RevRobotics40HDHexMotor">Rev Robotics 40HD Hex Motor</option>
+                        <option value="RevRoboticsCoreHexMotor">Rev Robotics Core Hex Motor</option>
+                        <option value="RevRoboticsUltraplanetaryHDHexMotor">Rev Robotics Ultraplanetary HD Hex Motor</option>
+                        <option value="TetrixMotor">Tetrix Motor</option>
+                        <option value="Motor">Motor</option>
+                    </select>
+                </div>
+                    <button type="button" onclick="generateData()">Generate Data</button>
+                </form>
+            </section>
+
+            <section class="active">
+                <div id="output">
+                    <h2>Output</h2>
+                    <pre id="outputText"></pre>
+                </div>
+            </section>
+        </main>
+    </body>
+</html>

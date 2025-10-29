@@ -1,0 +1,124 @@
+:root {
+	--bg: #0e1116;
+	--panel: #111418;
+	--text: #e5e7eb;
+	--muted: #9aa4b2;
+	--link: #7dd3fc;
+	--link-hover: #38bdf8;
+	--panel-alpha: 0.55; /* translucency to blend with background */
+}
+
+* {
+	box-sizing: border-box;
+}
+html,
+body {
+	height: 100%;
+}
+body {
+	margin: 0;
+	background: var(--bg); /* solid background */
+	color: var(--text);
+	font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial,
+		sans-serif;
+}
+
+.container {
+	max-width: 900px;
+	margin: 0 auto;
+	padding: clamp(16px, 2.5vw, 32px);
+	background: var(--panel); /* solid panel */
+	border: 1px solid #1a2230;
+	border-radius: 14px;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35),
+		inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+h1,
+h2,
+h3 {
+	margin: 1.2em 0 0.5em;
+	line-height: 1.2;
+}
+h1 {
+	font-size: clamp(1.6rem, 3.4vw, 2.2rem);
+}
+h2 {
+	font-size: clamp(1.2rem, 2.6vw, 1.6rem);
+	color: #cbd5e1;
+}
+h3 {
+	font-size: clamp(1.05rem, 2.2vw, 1.25rem);
+	color: #cbd5e1;
+}
+
+p,
+li {
+	color: var(--text);
+}
+ul {
+	padding-left: 1.2rem;
+}
+li {
+	margin: 0.25rem 0;
+}
+
+code {
+	background: #111827;
+	border: 1px solid #1f2937;
+	color: #e5e7eb;
+	padding: 0.15rem 0.35rem;
+	border-radius: 6px;
+}
+
+a {
+	color: var(--link);
+	text-decoration: none;
+}
+a:hover {
+	color: var(--link-hover);
+	text-decoration: underline;
+}
+
+/* Back button */
+.back-button {
+	position: fixed;
+	top: 16px;
+	left: 16px;
+	z-index: 10;
+	color: #fff;
+	text-decoration: none;
+	font-size: 1rem;
+	line-height: 1;
+	padding: 6px 10px;
+	border-radius: 8px;
+	background: rgba(0, 0, 0, 0.25);
+	backdrop-filter: blur(2px);
+}
+.back-button:hover {
+	background: rgba(255, 255, 255, 0.15);
+}
+
+@media (prefers-color-scheme: light) {
+	:root {
+		--bg: #f6f7f9;
+		--text: #111827;
+		--muted: #4b5563;
+		--panel: #ffffff;
+		--link: #2563eb;
+		--link-hover: #1d4ed8;
+	}
+	body {
+		background: var(--bg);
+	}
+	.container {
+		background: var(--panel);
+		border-color: #e5e7eb;
+		box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+	}
+	code {
+		background: #f3f4f6;
+		border-color: #e5e7eb;
+		color: #111827;
+	}
+}

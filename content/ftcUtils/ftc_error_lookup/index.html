@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>FTC Error Lookup - 5115</title>
+		<link rel="icon" href="images/placeholder.png" type="image/png" />
+		<link rel="stylesheet" href="styles.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+			crossorigin="anonymous"
+		/>
+		<script src="javas.js"></script>
+		<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+		<style>
+			body {
+				font-family: Arial, sans-serif;
+				margin: 0;
+				padding: 0;
+				background-color: #f0f0f0; /* Change the background color of the entire page */
+				color: #333;
+				height: 100vh;
+				width: 100vw;
+				display: flex;
+				flex-direction: column;
+			}
+			header {
+				background-color: #333;
+				color: #fff;
+				padding: 20px;
+				text-align: center;
+				flex-shrink: 0;
+				white-space: nowrap;
+			}
+			main {
+				flex: 1;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				padding: 20px;
+			}
+			section {
+				padding: 20px;
+				margin: 20px;
+				background-color: #e0e0e0; /* Change the background color of the sections */
+				border-radius: 8px;
+				box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+				width: 100vw;
+			}
+			form {
+				display: flex;
+				flex-direction: column;
+			}
+			label {
+				margin-top: 10px;
+			}
+			input,
+			select,
+			button {
+				padding: 10px;
+				margin-top: 5px;
+				border: 1px solid #ccc;
+				border-radius: 4px;
+			}
+			button {
+				background-color: #333;
+				color: #fff;
+				cursor: pointer;
+				margin-top: 20px;
+			}
+			button:hover {
+				background-color: #555;
+			}
+			#output {
+				margin-top: 20px;
+				font-size: large;
+			}
+			pre {
+				background-color: #f4f4f4;
+				padding: 10px;
+				border: 1px solid #ccc;
+				border-radius: 4px;
+				white-space: pre-wrap;
+				word-wrap: break-word;
+			}
+		</style>
+		<script>
+			let problems = [
+				{
+					tag: "Null Pointer Exception",
+					cause:
+						"Value has not been initialized. This is usually thrown when you set a value to null and forget to initialize it.",
+					solution: "Initialize the value before runOpMode()",
+				},
+				{
+					tag: "Array Index Out of Bounds",
+					cause:
+						"You are trying to access an index in an array that does not exist.",
+					solution:
+						"Make sure the index you are trying to access is within the bounds of the array.",
+				},
+				{
+					tag: "Cannot find hostname",
+					cause:
+						"Your gradle build cannot get wifi access. Therefore not able to download the dependencies needed.",
+					solution:
+						"Make sure you are connected to wifi and try gradle sync again.",
+				},
+				{
+					tag: "Unknown host",
+					cause:
+						"Your gradle build cannot get wifi access. Therefore not able to download the dependencies needed.",
+					solution:
+						"Make sure you are connected to wifi and try gradle sync again.",
+				},
+				{
+					tag: "Stuck in stop",
+					cause:
+						"This happens when your robot stops while in a while loop. The easiest way to fix this is to not use while loops, or use !opMode.isStopRequested() as a condition in the while loop,",
+					solution:
+						"Use !opMode.isStopRequested() as a condition in the while loop. OR no while loops.",
+				},
+				{
+					tag: "Hardware Device not found",
+					cause:
+						"The hardware device you are trying to access isn't being found on the robot. This can also happen with I2C devices where it is not connected properly.",
+					solution:
+						"Make sure your configuration is complete and all devices are properly plugged in and named.",
+				},
+				{
+					tag: "Roadrunner Heading Randomly Stops",
+					cause:
+						"This is a bug in the IMU software, when you use a BHI it will randomly stop tracking.",
+					solution: "Use a BNO055 IMU instead.",
+				},
+				{
+					tag: "org.gradle.internal.event.ListenerNotificationException: Failed to notify project evaluation listener.",
+				},
+				{
+					tag: "MissingFormatArgumentException",
+					cause:
+						"You are trying to format a string with a placeholder but not providing the value for the placeholder.",
+					solution:
+						"Make sure you provide the value for the placeholder format in your telemetry.",
+				},
+				{
+					tag: "A build operation failed\nCould not read workspace metadata from ",
+					cause:
+						"This is a bug in the gradle build system. It is usually caused by a corrupted workspace.",
+					solution:
+						"Delete the .gradle folder in your computer and try syncing again.",
+				},
+			];
+
+			function addProblem() {
+				const tag = document.getElementById("problemTag").value;
+				const cause = document.getElementById("problemCause").value;
+				const solution = document.getElementById("problemSolution").value;
+
+				problems.push({ tag, cause, solution });
+				document.getElementById("problemForm").reset();
+				displayProblems();
+			}
+
+			function searchProblems() {
+				const searchTag = document
+					.getElementById("searchTag")
+					.value.toLowerCase();
+				const filteredProblems = problems.filter((problem) =>
+					problem.tag.toLowerCase().includes(searchTag)
+				);
+				if (filteredProblems.length === 0) {
+					alert(
+						"No problems found, please issue an error @ https://github.com/GramGra07/FTC-Error-Lookup/issues"
+					);
+				}
+				displayProblems(filteredProblems);
+			}
+
+			function displayProblems(filteredProblems = problems) {
+				const output = document.getElementById("outputText");
+				output.innerHTML = "";
+
+				filteredProblems.forEach((problem) => {
+					output.innerHTML += `<strong>Tag:</strong> ${problem.tag}<br>`;
+					output.innerHTML += `<strong>Cause:</strong> ${problem.cause}<br>`;
+					output.innerHTML += `<strong>Solution:</strong> ${problem.solution}<br><br>`;
+				});
+			}
+		</script>
+	</head>
+
+	<body onload="toRun()">
+		<a class="back-button" href="/public/" aria-label="Back to Terminal"
+			>← Back</a
+		>
+		<!-- Header Section -->
+		<header class="active">
+			<div>
+				<h1>FTC Error Lookup</h1>
+				<br />
+				<p>5115 Escape Velocity</p>
+			</div>
+		</header>
+		<div id="particles-js"></div>
+		<main>
+			<!-- <section class="active">
+                <form id="problemForm">
+                    <label for="problemTag">Problem Tag:</label>
+                    <input type="text" id="problemTag" name="problemTag" required />
+                    <label for="problemCause">Cause:</label>
+                    <input type="text" id="problemCause" name="problemCause" required />
+                    <label for="problemSolution">Solution:</label>
+                    <input type="text" id="problemSolution" name="problemSolution" required />
+                    <button type="button" onclick="addProblem()">Add Problem</button>
+                </form>
+            </section> -->
+
+			<section class="active">
+				<form id="searchForm">
+					<label for="searchTag">Search:</label>
+					<input type="text" id="searchTag" name="searchTag" />
+					<button type="button" onclick="searchProblems()">Search</button>
+				</form>
+			</section>
+
+			<section class="active">
+				<div id="output">
+					<h2>Output</h2>
+					<pre id="outputText"></pre>
+				</div>
+			</section>
+		</main>
+	</body>
+</html>
