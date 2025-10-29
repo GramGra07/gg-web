@@ -200,7 +200,7 @@ async function runCommand(input, state) {
 					"  cd <dir>",
 					"  ls [-a] [path]   # -a lists recursively (hidden files are still hidden)",
 					"  open <file>      # cannot open directories",
-					"  sl               # steam locomotive",
+					// "  sl               # steam locomotive",
 					"  help",
 				].join("\n"),
 				state,
