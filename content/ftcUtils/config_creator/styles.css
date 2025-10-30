@@ -89,3 +89,27 @@ p {
 	background: #111;
 	outline: none;
 }
+
+/* Small-screen layout adjustments */
+@media (max-width: 640px) {
+	header {
+		padding: 1rem;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 0.5rem;
+		font: bold 1.2em/1 sans-serif;
+	}
+	section {
+		margin: 1rem;
+		padding: 0.85rem;
+	}
+	.footer {
+		position: static; /* avoid covering content on phones */
+		font-size: 1rem;
+	}
+	.back-button {
+		margin: 12px;
+		padding: 10px 14px; /* comfortable tap target */
+		font-size: 1rem;
+	}
+}

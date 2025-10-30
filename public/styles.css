@@ -27,8 +27,11 @@ body {
 	font-family: var(--mono);
 }
 
+
 #app {
 	height: 100vh;
+	/* Use dynamic viewport height on mobile browsers to avoid hidden areas under toolbars */
+	height: 100dvh;
 	max-width: 900px;
 	margin: 0 auto;
 	padding: 16px;
@@ -71,7 +74,7 @@ body {
 	color: var(--text);
 	outline: none;
 	font-family: var(--mono);
-	font-size: 14px;
+	font-size: clamp(14px, 3.8vw, 16px);
 }
 
 .output .err {
@@ -86,4 +89,27 @@ a {
 }
 a:hover {
 	text-decoration: underline;
+}
+
+/* Small-screen tweaks */
+@media (max-width: 640px) {
+	#app {
+		padding: 8px;
+		gap: 8px;
+	}
+	.term {
+		padding: 12px;
+		border-radius: 10px;
+	}
+	#prompt {
+		padding: 10px;
+		border-radius: 10px;
+		gap: 6px;
+	}
+	.ps1 {
+		font-size: 0.95rem;
+	}
+	#cmd {
+		min-height: 44px; /* comfortable tap target */
+	}
 }

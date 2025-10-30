@@ -389,6 +389,13 @@ a:hover {
 
 /* Responsive tweaks */
 @media (max-width: 880px) {
+	header {
+		padding: 1rem;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 0.5rem;
+		font: bold 1.2em/1 sans-serif;
+	}
 	.project-controls {
 		flex-direction: column;
 		align-items: stretch;
@@ -401,6 +408,16 @@ a:hover {
 	}
 	.search-group input {
 		width: 100%;
+	}
+	section {
+		margin: 1rem;
+		padding: 0.85rem;
+	}
+}
+@media (max-width: 640px) {
+	.footer {
+		position: static; /* avoid covering content on phones */
+		font-size: 1rem;
 	}
 }
 @media (prefers-reduced-motion: reduce) {
