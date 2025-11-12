@@ -1,0 +1,23 @@
+[
+  {
+    "name": "codetrainingmodule.gmg-dev.com",
+    "path": "/codetrainingmodule",
+    "type": "file",
+    "hidden": false,
+    "url": "https://codetrainingmodule.gmg-dev.com"
+  },
+  {
+    "name": "ftc-linter.gmg-dev.com",
+    "path": "/ftc-linter",
+    "type": "file",
+    "hidden": false,
+    "url": "https://ftc-linter.gmg-dev.com"
+  },
+  {
+    "name": "gau.gmg-dev.com",
+    "path": "/gau",
+    "type": "file",
+    "hidden": false,
+    "url": "https://gau.gmg-dev.com"
+  }
+]

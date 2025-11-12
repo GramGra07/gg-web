@@ -5,6 +5,10 @@ import path from "node:path";
 
 const CONTENT_ROOT = path.resolve(process.cwd(), "content");
 const OUTPUT = path.resolve(process.cwd(), "public/terminal-sitemap.json");
+const EXTERNAL_LINKS_FILE = path.resolve(
+	process.cwd(),
+	"scripts/external-links.json"
+);
 
 const DEFAULT_IGNORES = new Set([
 	"node_modules",
@@ -19,11 +23,19 @@ const DEFAULT_IGNORES = new Set([
 	"build",
 	"Thumbs.db",
 	"README.md",
-	"privacy"
+	"privacy",
 ]);
 
 // File extensions to ignore (lowercase, include the dot)
-const IGNORE_EXTS = new Set([".js", ".css", ".png",".json",".svg",".jpg",".jpeg"]);
+const IGNORE_EXTS = new Set([
+	".js",
+	".css",
+	".png",
+	".json",
+	".svg",
+	".jpg",
+	".jpeg",
+]);
 
 function isHidden(name) {
 	return name.startsWith(".");
@@ -108,6 +120,27 @@ async function main() {
 		hidden: false,
 		children: await readDirTree(CONTENT_ROOT, ""),
 	};
+
+	// Optionally append external links to the root of the tree
+	try {
+		const raw = await fs.readFile(EXTERNAL_LINKS_FILE, "utf-8");
+		const extras = JSON.parse(raw);
+		if (Array.isArray(extras) && extras.length) {
+			for (const node of extras) {
+				if (!node || typeof node !== "object") continue;
+				// minimal validation
+				if (node.type !== "file" || !node.name || !node.path || !node.url)
+					continue;
+				node.hidden = Boolean(node.hidden) === true ? true : false;
+				tree.children.push(node);
+			}
+		}
+	} catch (e) {
+		// missing file is fine; log other errors
+		if (e && e.code !== "ENOENT") {
+			console.warn("[warn] Failed to read external links:", e.message || e);
+		}
+	}
 
 	const index = {};
 	(function walk(node) {
