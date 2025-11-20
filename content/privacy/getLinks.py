@@ -18,7 +18,7 @@ def main():
 	base_url = 'https://gmg-dev.com/'+directory
 	pdf_names = get_pdf_names(directory)
 	links = make_links(pdf_names, base_url)
-	with open('content/privacy/links.txt', 'a') as f:
+	with open('content/privacy/links.txt', 'w') as f:
 		for link in links:
 			f.write(link + '\n')
 

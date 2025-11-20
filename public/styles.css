@@ -27,7 +27,6 @@ body {
 	font-family: var(--mono);
 }
 
-
 #app {
 	height: 100vh;
 	/* Use dynamic viewport height on mobile browsers to avoid hidden areas under toolbars */
