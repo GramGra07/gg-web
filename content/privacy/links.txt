@@ -7,3 +7,4 @@ https://gmg-dev.com/content/privacy/SG_Score_Privacy_Policy.pdf
 https://gmg-dev.com/content/privacy/The_Fastest_Lap_Privacy_Policy.pdf
 https://gmg-dev.com/content/privacy/VirtuAI_Tour_Privacy_Policy.pdf
 https://gmg-dev.com/content/privacy/ZipList_Privacy_Policy.pdf
+https://gmg-dev.com/content/artifactRetrieval/artifactRetrieval.pdf

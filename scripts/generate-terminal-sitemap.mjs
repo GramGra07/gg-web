@@ -24,6 +24,7 @@ const DEFAULT_IGNORES = new Set([
 	"Thumbs.db",
 	"README.md",
 	"privacy",
+	"artifactRetrieval"
 ]);
 
 // File extensions to ignore (lowercase, include the dot)
