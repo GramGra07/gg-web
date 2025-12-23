@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-10-30T00:19:04.027Z",
+  "generatedAt": "2025-12-23T23:07:30.784Z",
   "tree": {
     "root": "/",
     "type": "dir",
@@ -134,6 +134,13 @@
             "url": "/content/portfolio/portfolio.html"
           }
         ]
+      },
+      {
+        "name": "links.txt",
+        "path": "/links.txt",
+        "type": "file",
+        "hidden": false,
+        "url": "/content/links.txt"
       },
       {
         "name": "my_links.html",
@@ -300,6 +307,13 @@
               "url": "/content/portfolio/portfolio.html"
             }
           ]
+        },
+        {
+          "name": "links.txt",
+          "path": "/links.txt",
+          "type": "file",
+          "hidden": false,
+          "url": "/content/links.txt"
         },
         {
           "name": "my_links.html",
@@ -604,6 +618,13 @@
       "type": "file",
       "hidden": false,
       "url": "/content/portfolio/portfolio.html"
+    },
+    "/links.txt": {
+      "name": "links.txt",
+      "path": "/links.txt",
+      "type": "file",
+      "hidden": false,
+      "url": "/content/links.txt"
     },
     "/my_links.html": {
       "name": "my_links.html",

@@ -23,7 +23,7 @@ const DEFAULT_IGNORES = new Set([
 	"build",
 	"Thumbs.db",
 	"README.md",
-	"privacy",
+	"legal",
 	"artifactRetrieval"
 ]);
 
